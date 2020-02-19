@@ -1,23 +1,27 @@
 <template>
-    <div >
-      <AddTodo />
-      <TodoList />
+    <div id="app">
+      <div class="container">
+        <h1>To Do List Vue</h1>
+        <input type="text" v-model="newToDo">
+        <button class="add-button">Add</button>
+      </div>
     </div>
 </template>
 
 <script>
-import TodoList from './components/TodoList'
-import AddTodo from './components/AddTodo'
+
 export default {
-  components : {
-    TodoList,
-    AddTodo
-  },
-  data() {
+  name: 'app',
+  data () {
     return {
-      todos: []
+      newToDo: '',
+      existingToDo: [
+        {text: 'get food', id: 0},
+        {text: 'go to work', id: 1},
+        {text: 'go to gym', id: 2},
+      ]
     }
-  },
+  }
 }
 </script>
 
