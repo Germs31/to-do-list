@@ -4,6 +4,13 @@
         <h1>To Do List Vue</h1>
         <input type="text" v-model="newToDo">
         <button class="add-button">Add</button>
+        <ul>
+          <li v-for="todo in existingToDo">
+            <span>
+              {{todo.text}}
+            </span>
+          </li>
+        </ul>
       </div>
     </div>
 </template>
