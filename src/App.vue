@@ -9,7 +9,7 @@
             <span>
               {{todo.text}}
             </span> 
-            <button @click="deleteToDo()"> 
+            <button class="delete" @click="deleteToDo()"> 
               X
             </button>
           </li>
@@ -49,5 +49,39 @@ export default {
 </script>
 
 <style>
+*{
+  margin: 0;
+}
 
+body{
+  background: #379683;
+  color: #edf5e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+input[type=text]{
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.add-button{
+  width: 100%;
+}
+
+ul{
+  list-style: none;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.container{
+  background: #05386b;
+  padding: 2rem;
+}
 </style>
+
+
