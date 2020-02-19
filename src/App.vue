@@ -9,6 +9,9 @@
             <span>
               {{todo.text}}
             </span> 
+            <button @click="deleteToDo()"> 
+              X
+            </button>
           </li>
         </ul>
       </div>
@@ -37,7 +40,7 @@ export default {
       }),
       this.newToDo =''
     },
-    delete(i) {
+    deleteToDo(i) {
       this.existingToDo.splice(i, 1)
     }
   }
