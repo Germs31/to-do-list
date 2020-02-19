@@ -3,12 +3,12 @@
       <div class="container">
         <h1>To Do List Vue</h1>
         <input type="text" v-model="newToDo">
-        <button class="add-button">Add</button>
+        <button class="add-button" v-on:click="add()">Add</button>
         <ul>
-          <li v-for="todo in existingToDo">
+          <li v-bind:key="todo.id" v-for="todo in existingToDo" >
             <span>
               {{todo.text}}
-            </span>
+            </span> 
           </li>
         </ul>
       </div>
@@ -28,7 +28,20 @@ export default {
         {text: 'go to gym', id: 2},
       ]
     }
+  },
+  methods: {
+    add() {
+      this.existingToDo.push({
+        text: this.newToDo,
+        id: new Date().valueOf()
+      }),
+      this.newToDo =''
+    },
+    delete(i) {
+      this.existingToDo.splice(i, 1)
+    }
   }
+  
 }
 </script>
 
